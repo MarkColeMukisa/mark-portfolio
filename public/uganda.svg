@@ -1,0 +1,13 @@
+<svg width="96" height="64" viewBox="0 0 96 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="96" height="64" rx="10" fill="white"/>
+    <path d="M0 0H96V10.667H0V0Z" fill="#111111"/>
+    <path d="M0 10.667H96V21.333H0V10.667Z" fill="#F5CC00"/>
+    <path d="M0 21.333H96V32H0V21.333Z" fill="#D6252D"/>
+    <path d="M0 32H96V42.667H0V32Z" fill="#111111"/>
+    <path d="M0 42.667H96V53.333H0V42.667Z" fill="#F5CC00"/>
+    <path d="M0 53.333H96V64H0V53.333Z" fill="#D6252D"/>
+    <circle cx="48" cy="32" r="14" fill="#F5F5F5" stroke="#D1D5DB" stroke-width="1.5"/>
+    <path d="M48.5 21.5C51.4 24.1 51.7 28.2 49.1 31.1C52.2 30.3 55 32.7 54.9 35.8C54.8 38.3 52.7 40.4 50.2 40.5C47.5 40.7 45.2 38.8 44.8 36.3L43.5 35.4C41.5 33.9 40.8 31.2 41.9 29C43 26.8 45.5 25.7 47.8 26.3C47 24.6 47.3 22.8 48.5 21.5Z" fill="#6B7280"/>
+    <path d="M47 27.5L49.6 30.8L53.6 29.7L50.7 32.9L53 36.4L49.1 35.2L46.6 38.4L46.5 34.4L42.7 33L46.6 31.7L47 27.5Z" fill="#111111"/>
+    <rect x="0.75" y="0.75" width="94.5" height="62.5" rx="9.25" stroke="#D1D5DB" stroke-width="1.5"/>
+</svg>
