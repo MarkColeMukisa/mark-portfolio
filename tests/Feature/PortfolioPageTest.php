@@ -1,7 +1,7 @@
 <?php
 
-test('portfolio page can be rendered with navbar content', function () {
-    $response = $this->get(route('portfolio'));
+test('home page can be rendered with portfolio and navbar content', function () {
+    $response = $this->get(route('home'));
 
     $response
         ->assertOk()

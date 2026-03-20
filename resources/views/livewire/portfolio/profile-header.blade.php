@@ -8,8 +8,7 @@
                             class="size-28 select-none object-cover object-[42%_45%] sm:size-44"
                             alt="Mark Cole profile avatar"
                             fetchpriority="high"
-                            src="{{ asset('cole-1side.jpeg') }}"
-                        >
+                            src="{{ asset('cole-1side.jpeg') }}">
                     </div>
                 </div>
 
@@ -29,22 +28,21 @@
                             }, 3600);
                         }
                     }"
-                    class="flex flex-col"
-                >
+                    class="flex flex-col">
                     <div class="flex min-h-14 items-end bg-[repeating-linear-gradient(315deg,_rgba(161,161,170,0.24)_0,_rgba(161,161,170,0.24)_1px,_transparent_0,_transparent_50%)] bg-[length:12px_12px] px-4 pb-1">
                         <p class="line-clamp-1 font-mono text-xs text-zinc-400 select-none dark:text-zinc-500">
-                            text-3xl
-                            <span class="inline dark:hidden">text-zinc-950</span>
-                            <span class="hidden dark:inline">text-zinc-50</span>
-                            font-medium
+                            The
+                            <span class="inline dark:hidden">Night Code</span>
+                            Architect
                         </p>
                     </div>
 
                     <div class="border-t border-zinc-200 dark:border-zinc-700">
                         <h1 class="flex items-center px-4 pt-2 text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
                             Mark Cole
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ms-2 size-5 text-sky-500" aria-hidden="true">
-                                <path fill="currentColor" d="M12 0a4.44 4.44 0 0 1 3.91 2.56 4.43 4.43 0 0 1 4.58.95 4.43 4.43 0 0 1 .95 4.58A4.45 4.45 0 0 1 24 12a4.45 4.45 0 0 1-2.57 3.91 4.43 4.43 0 0 1-.95 4.58 4.43 4.43 0 0 1-4.58.95A4.44 4.44 0 0 1 12 24a4.44 4.44 0 0 1-3.91-2.56 4.43 4.43 0 0 1-4.58-.95 4.43 4.43 0 0 1-.95-4.58A4.45 4.45 0 0 1 0 12a4.45 4.45 0 0 1 2.56-3.91 4.43 4.43 0 0 1 .95-4.58 4.43 4.43 0 0 1 4.58-.95A4.44 4.44 0 0 1 12 0Zm4.23 8.93-6.02 6.58-2.74-2.74-1.55 1.56 4.38 4.38 7.26-7.93-1.33-1.23Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ms-2 size-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="m16 18 6-6-6-6"></path>
+                                <path d="m8 6-6 6 6 6"></path>
                             </svg>
                         </h1>
 
@@ -58,8 +56,7 @@
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave-end="opacity-0 -translate-y-1"
                                 x-text="subtitles[currentSubtitle]"
-                                class="font-mono text-[13px] leading-5 text-zinc-600 dark:text-zinc-300"
-                            ></p>
+                                class="font-mono text-[13px] leading-5 text-zinc-600 dark:text-zinc-300"></p>
                         </div>
                     </div>
                 </div>
