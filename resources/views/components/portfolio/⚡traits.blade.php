@@ -166,6 +166,5 @@ new class extends Component
 
             <p class="text-balance">Male</p>
         </div>
-        <p class="text-balance">Male</p>
     </div>
 </section>
