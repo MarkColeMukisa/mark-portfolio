@@ -9,96 +9,21 @@ new class extends Component
 ?>
 
 <section class="mx-auto w-full max-w-6xl px-3 pb-4 sm:px-6">
-    <div class="border-x border-zinc-200 dark:border-zinc-700">
+    <div class="space-y-2 p-4 border-x border-zinc-200 dark:border-zinc-700">
         <h2 class="sr-only">Overview</h2>
+        <!-- Experience  -->
+        <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
+            <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                    <line x1="12" y1="12" x2="12" y2="12.01"></line>
+                </svg>
+            </div>
+            <p class="text-balance">5+ years Experience</p>
+        </div>
 
-        <!-- <div class="space-y-2 p-4">
-            <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    Founder &amp; CEO @
-                    <a class="font-medium underline-offset-4 hover:underline" href="https://desishub.com/?utm_source=portfolio&amp;utm_medium=website&amp;utm_campaign=referral" target="_blank" rel="noopener">
-                        Desishub Technologies
-                    </a>
-                </p>
-            </div> -->
-
-        <!-- <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    Founder @
-                    <a class="font-medium underline-offset-4 hover:underline" href="https://desishub.com/?utm_source=portfolio&amp;utm_medium=website&amp;utm_campaign=referral" target="_blank" rel="noopener">
-                        Desishub Coding School
-                    </a>
-                </p>
-            </div> -->
-
-        <!-- <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    Co-Founder @
-                    <a class="font-medium underline-offset-4 hover:underline" href="https://desispay.com/?utm_source=portfolio&amp;utm_medium=website&amp;utm_campaign=referral" target="_blank" rel="noopener">
-                        DesisPay
-                    </a>
-                </p>
-            </div> -->
-
-        <!-- <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 12h.01"></path>
-                        <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
-                        <path d="M22 13a18.15 18.15 0 0 1-20 0"></path>
-                        <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    YouTube Content Creator @
-                    <a class="font-medium underline-offset-4 hover:underline" href="https://www.youtube.com/@JBWEBDEVELOPER?utm_source=portfolio&amp;utm_medium=website&amp;utm_campaign=referral" target="_blank" rel="noopener">
-                        JB WEB DEVELOPER
-                    </a>
-                </p>
-            </div> -->
-
-        <!-- <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                        <path d="M9 18h6"></path>
-                        <path d="M10 22h4"></path>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    Founder @
-                    <a class="font-medium underline-offset-4 hover:underline" href="https://nextjsacademy.com/?utm_source=portfolio&amp;utm_medium=website&amp;utm_campaign=referral" target="_blank" rel="noopener">
-                        Nextjs Academy
-                    </a>
-                </p>
-            </div> -->
-
+        <!-- Address  -->
         <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
             <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -109,7 +34,7 @@ new class extends Component
 
             <p class="text-balance">Kampala, Central Region, Uganda</p>
         </div>
-
+        <!-- Phone Number  -->
         <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
             <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -123,7 +48,7 @@ new class extends Component
                 </a>
             </p>
         </div>
-
+        <!-- Mail  -->
         <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
             <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,23 +63,7 @@ new class extends Component
                 </a>
             </p>
         </div>
-
-        <!-- <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
-                <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                        <path d="M2 12h20"></path>
-                    </svg>
-                </div>
-
-                <p class="text-balance">
-                    <a class="underline-offset-4 hover:underline" href="https://jb.desishub.com" target="_blank" rel="noopener noreferrer">
-                        jb.desishub.com
-                    </a>
-                </p>
-            </div> -->
-
+        <!-- Gender  -->
         <div class="flex items-center gap-4 font-mono text-sm text-zinc-900 dark:text-zinc-100">
             <div class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
