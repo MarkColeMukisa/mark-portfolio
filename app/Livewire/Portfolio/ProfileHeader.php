@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Portfolio;
 
 use Illuminate\Contracts\View\View;
@@ -14,9 +16,9 @@ class ProfileHeader extends Component
         'Full Stack Laravel Developer',
         'Laravel and Livewire engineer',
         'mail me @ markcole683@gmail.com',
-        'halla me @ +256702262806'
+        'halla me @ +256702262806',
     ];
- 
+
     public function render(): View
     {
         return view('livewire.portfolio.profile-header');
