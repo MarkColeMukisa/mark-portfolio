@@ -37,5 +37,9 @@ test('home page can be rendered with portfolio and navbar content', function () 
         ->assertSee('Built by')
         ->assertSee('MarkCole (FullStack Laravel Developer)')
         ->assertSee('aria-label="Toggle Theme"', false)
-        ->assertSee('Ctrl K');
+        ->assertSee('Ctrl K')
+        ->assertSee('grid-cols-[auto_minmax(0,1fr)]', false)
+        ->assertSee('grid-cols-[7.5rem_minmax(0,1fr)]', false)
+        ->assertSee('wrap-anywhere', false)
+        ->assertSee('min-[390px]:inline', false);
 });
