@@ -1,5 +1,8 @@
 <?php
 
+use App\Services\ExperienceCalculator;
+use Carbon\CarbonImmutable;
+
 test('home page can be rendered with portfolio and navbar content', function () {
     $response = $this->get(route('home'));
 
@@ -42,4 +45,47 @@ test('home page can be rendered with portfolio and navbar content', function () 
         ->assertSee('grid-cols-[7.5rem_minmax(0,1fr)]', false)
         ->assertSee('wrap-anywhere', false)
         ->assertSee('min-[390px]:inline', false);
+});
+
+test('traits component shows dynamic experience label from config start date', function () {
+    CarbonImmutable::setTestNow('2026-04-03');
+
+    config(['portfolio.experience_start_date' => '2020-06-01']);
+
+    $response = $this->get(route('home'));
+
+    $response
+        ->assertOk()
+        ->assertSee('5+ years Experience');
+
+    CarbonImmutable::setTestNow();
+});
+
+test('traits component updates experience label when start date changes', function () {
+    CarbonImmutable::setTestNow('2026-04-03');
+
+    config(['portfolio.experience_start_date' => '2016-04-03']);
+
+    $response = $this->get(route('home'));
+
+    $response
+        ->assertOk()
+        ->assertSee('10+ years Experience');
+
+    CarbonImmutable::setTestNow();
+});
+
+test('experience calculator produces correct years from configured start date', function () {
+    CarbonImmutable::setTestNow('2026-04-03');
+
+    config(['portfolio.experience_start_date' => '2020-06-01']);
+
+    $calculator = new ExperienceCalculator;
+    $startDate = CarbonImmutable::parse(config('portfolio.experience_start_date'));
+    $breakdown = $calculator->calculate($startDate);
+
+    expect($breakdown->years)->toBe(5)
+        ->and($breakdown->totalMonths)->toBe(70);
+
+    CarbonImmutable::setTestNow();
 });
