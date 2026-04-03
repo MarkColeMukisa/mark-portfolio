@@ -1,10 +1,23 @@
 <?php
 
+use App\Services\ExperienceCalculator;
+use Carbon\CarbonImmutable;
 use Livewire\Component;
 
 new class extends Component
 {
-    //
+    public string $experienceLabel = '5+ years';
+
+    public function mount(ExperienceCalculator $calculator): void
+    {
+        try {
+            $startDate = CarbonImmutable::parse(config('portfolio.experience_start_date', '2020-06-01'));
+            $breakdown = $calculator->calculate($startDate);
+            $this->experienceLabel = $breakdown->years . '+ years';
+        } catch (Throwable) {
+            // Fallback to the default label when the configured date is invalid.
+        }
+    }
 };
 ?>
 
@@ -20,7 +33,7 @@ new class extends Component
                     <line x1="12" y1="12" x2="12" y2="12.01"></line>
                 </svg>
             </div>
-            <p class="text-balance">5+ years Experience</p>
+            <p class="text-balance">{{ $experienceLabel }} Experience</p>
         </div>
 
         <!-- Address  -->
