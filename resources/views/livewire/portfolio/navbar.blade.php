@@ -42,7 +42,7 @@
             </div>
 
             <div class="flex min-w-0 items-center justify-end gap-2 px-2 sm:px-3">
-                <button
+                <!-- <button
                     type="button"
                     class="inline-flex h-10 min-w-0 items-center gap-2 rounded-full border border-zinc-300 bg-white px-2.5 text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-white sm:px-3"
                     aria-label="Search">
@@ -51,7 +51,7 @@
                     <kbd class="hidden rounded-sm border border-zinc-300 px-1.5 py-0.5 text-xs font-medium text-zinc-500 sm:inline dark:border-zinc-500 dark:text-zinc-300">
                         Ctrl K
                     </kbd>
-                </button>
+                </button> -->
 
                 <a
                     href="https://github.com/markcolemukisa"

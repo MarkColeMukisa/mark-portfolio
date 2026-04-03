@@ -33,4 +33,23 @@ readonly class ExperienceBreakdown
 
         return collect($parts)->join(', ');
     }
+
+    public function detailedPeriod(): string
+    {
+        $parts = [];
+
+        if ($this->years > 0) {
+            $parts[] = $this->years.' '.($this->years === 1 ? 'year' : 'years');
+        }
+
+        if ($this->months > 0) {
+            $parts[] = $this->months.' '.($this->months === 1 ? 'month' : 'months');
+        }
+
+        if ($this->days > 0 || $parts === []) {
+            $parts[] = $this->days.' '.($this->days === 1 ? 'day' : 'days');
+        }
+
+        return collect($parts)->join(', ');
+    }
 }

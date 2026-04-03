@@ -15,7 +15,8 @@ test('it calculates a detailed experience breakdown', function () {
         ->and($experience->months)->toBe(2)
         ->and($experience->days)->toBe(10)
         ->and($experience->totalMonths)->toBe(74)
-        ->and($experience->formattedPeriod())->toBe('6 years, 2 months');
+        ->and($experience->formattedPeriod())->toBe('6 years, 2 months')
+        ->and($experience->detailedPeriod())->toBe('6 years, 2 months, 10 days');
 });
 
 test('it falls back to days when experience is less than a month', function () {
@@ -29,7 +30,8 @@ test('it falls back to days when experience is less than a month', function () {
     expect($experience->years)->toBe(0)
         ->and($experience->months)->toBe(0)
         ->and($experience->days)->toBe(5)
-        ->and($experience->formattedPeriod())->toBe('5 days');
+        ->and($experience->formattedPeriod())->toBe('5 days')
+        ->and($experience->detailedPeriod())->toBe('5 days');
 });
 
 test('it formats a single year correctly', function () {
@@ -42,7 +44,8 @@ test('it formats a single year correctly', function () {
 
     expect($experience->years)->toBe(1)
         ->and($experience->months)->toBe(0)
-        ->and($experience->formattedPeriod())->toBe('1 year');
+        ->and($experience->formattedPeriod())->toBe('1 year')
+        ->and($experience->detailedPeriod())->toBe('1 year');
 });
 
 test('it formats a single month correctly', function () {
@@ -55,7 +58,8 @@ test('it formats a single month correctly', function () {
 
     expect($experience->years)->toBe(0)
         ->and($experience->months)->toBe(1)
-        ->and($experience->formattedPeriod())->toBe('1 month');
+        ->and($experience->formattedPeriod())->toBe('1 month')
+        ->and($experience->detailedPeriod())->toBe('1 month');
 });
 
 test('it uses the current date when no current date is supplied', function () {

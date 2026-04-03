@@ -56,7 +56,7 @@ test('traits component shows dynamic experience label from config start date', f
 
     $response
         ->assertOk()
-        ->assertSee('5+ years Experience');
+        ->assertSee('5 years, 10 months, 2 days of Experience');
 
     CarbonImmutable::setTestNow();
 });
@@ -70,7 +70,7 @@ test('traits component updates experience label when start date changes', functi
 
     $response
         ->assertOk()
-        ->assertSee('10+ years Experience');
+        ->assertSee('10 years of Experience');
 
     CarbonImmutable::setTestNow();
 });
