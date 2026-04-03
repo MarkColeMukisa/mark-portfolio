@@ -2,7 +2,18 @@
 
 use App\Models\User;
 
-test('traits component shows fallback when no user experience start date is set', function () {
+test('traits component shows fallback when no user exists in the database', function () {
+    $response = $this->get(route('home'));
+
+    $response
+        ->assertOk()
+        ->assertSee('5+ years')
+        ->assertSee('Experience');
+});
+
+test('traits component shows fallback when user has no experience_start_date', function () {
+    User::factory()->create(['experience_start_date' => null]);
+
     $response = $this->get(route('home'));
 
     $response

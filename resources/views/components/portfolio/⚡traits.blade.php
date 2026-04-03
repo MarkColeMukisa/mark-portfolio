@@ -10,11 +10,13 @@ new class extends Component
 
     public function mount(): void
     {
-        $user = User::first();
+        // This is a single-owner personal portfolio. The portfolio owner is
+        // always the first (and typically only) registered user.
+        $owner = User::oldest('id')->first();
 
-        if ($user?->experience_start_date) {
+        if ($owner?->experience_start_date) {
             $calculator = new ExperienceCalculator;
-            $breakdown = $calculator->calculate($user->experience_start_date);
+            $breakdown = $calculator->calculate($owner->experience_start_date);
             $years = $breakdown->years;
             $this->experienceLabel = $years > 0 ? "{$years}+ years" : $breakdown->formattedPeriod();
         }

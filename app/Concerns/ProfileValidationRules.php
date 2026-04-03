@@ -58,6 +58,6 @@ trait ProfileValidationRules
      */
     protected function experienceStartDateRules(): array
     {
-        return ['nullable', 'date', 'date_format:Y-m-d', 'before_or_equal:today'];
+        return ['nullable', 'date_format:Y-m-d', 'before_or_equal:today'];
     }
 }
