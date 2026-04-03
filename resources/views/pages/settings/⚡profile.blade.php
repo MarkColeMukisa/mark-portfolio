@@ -13,6 +13,7 @@ new #[Title('Profile settings')] class extends Component {
 
     public string $name = '';
     public string $email = '';
+    public string $experience_start_date = '';
 
     /**
      * Mount the component.
@@ -21,6 +22,7 @@ new #[Title('Profile settings')] class extends Component {
     {
         $this->name = Auth::user()->name;
         $this->email = Auth::user()->email;
+        $this->experience_start_date = Auth::user()->experience_start_date?->toDateString() ?? '';
     }
 
     /**
@@ -31,6 +33,9 @@ new #[Title('Profile settings')] class extends Component {
         $user = Auth::user();
 
         $validated = $this->validate($this->profileRules($user->id));
+
+        // Convert empty string to null so the 'date' cast doesn't throw.
+        $validated['experience_start_date'] = $validated['experience_start_date'] ?: null;
 
         $user->fill($validated);
 
@@ -105,6 +110,14 @@ new #[Title('Profile settings')] class extends Component {
                     </div>
                 @endif
             </div>
+
+            <flux:input
+                wire:model="experience_start_date"
+                :label="__('Experience Start Date')"
+                :description="__('The date you started your professional development career. Used to dynamically calculate years of experience.')"
+                type="date"
+                :max="today()->toDateString()"
+            />
 
             <div class="flex items-center gap-4">
                 <div class="flex items-center justify-end">

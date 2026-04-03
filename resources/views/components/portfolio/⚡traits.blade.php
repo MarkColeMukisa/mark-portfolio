@@ -1,10 +1,24 @@
 <?php
 
+use App\Models\User;
+use App\Services\ExperienceCalculator;
 use Livewire\Component;
 
 new class extends Component
 {
-    //
+    public string $experienceLabel = '5+ years';
+
+    public function mount(): void
+    {
+        $user = User::first();
+
+        if ($user?->experience_start_date) {
+            $calculator = new ExperienceCalculator;
+            $breakdown = $calculator->calculate($user->experience_start_date);
+            $years = $breakdown->years;
+            $this->experienceLabel = $years > 0 ? "{$years}+ years" : $breakdown->formattedPeriod();
+        }
+    }
 };
 ?>
 
@@ -20,7 +34,7 @@ new class extends Component
                     <line x1="12" y1="12" x2="12" y2="12.01"></line>
                 </svg>
             </div>
-            <p class="text-balance">5+ years Experience</p>
+            <p class="text-balance">{{ $experienceLabel }} {{ __('Experience') }}</p>
         </div>
 
         <!-- Address  -->

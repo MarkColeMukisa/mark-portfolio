@@ -19,6 +19,7 @@ trait ProfileValidationRules
         return [
             'name' => $this->nameRules(),
             'email' => $this->emailRules($userId),
+            'experience_start_date' => $this->experienceStartDateRules(),
         ];
     }
 
@@ -48,5 +49,15 @@ trait ProfileValidationRules
                 ? Rule::unique(User::class)
                 : Rule::unique(User::class)->ignore($userId),
         ];
+    }
+
+    /**
+     * Get the validation rules used to validate experience start dates.
+     *
+     * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
+     */
+    protected function experienceStartDateRules(): array
+    {
+        return ['nullable', 'date', 'date_format:Y-m-d', 'before_or_equal:today'];
     }
 }
