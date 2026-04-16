@@ -10,14 +10,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "endroid/qr-code": "^6.1",
+        "endroid/qr-code": "*",
         "laravel/fortify": "^1.30",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/blaze": "1.0",
         "livewire/flux": "^2.9.0",
-        "livewire/livewire": "^4.0",
-        "nativephp/mobile": "^3.2"
+        "livewire/livewire": "^4.0"
     },
     "require-dev": {
         "driftingly/rector-laravel": "^2.2",
@@ -55,7 +54,7 @@
             "@version:generate"
         ],
         "version:generate": [
-            "@php app/Support/generate-version.php"
+            "@php -r \"$date = trim((string) @shell_exec('git log -1 --format=%cd --date=format:\\\"%B %d, %Y\\\"')); $date = !empty($date) ? $date : date('F d, Y'); file_put_contents('version.json', json_encode(['last_updated' => $date, 'generated_at' => date('c')], JSON_PRETTY_PRINT)); echo 'Version file generated with date: ' . $date . PHP_EOL;\""
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

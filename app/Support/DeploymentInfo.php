@@ -12,7 +12,7 @@ class DeploymentInfo
     public static function lastUpdated(): string
     {
         return Cache::remember('deployment_last_updated', now()->addHour(), function () {
-            // 1. Try to read from a build-generated version file
+            // 1. Try to read from a build-generated version file (best for Cloud/CI)
             if (file_exists(base_path('version.json'))) {
                 $versionData = json_decode(file_get_contents(base_path('version.json')), true);
                 if (isset($versionData['last_updated'])) {
@@ -20,14 +20,17 @@ class DeploymentInfo
                 }
             }
 
-            // 2. Fallback to Git (for local development)
-            $process = Process::run('git log -1 --format=%cd --date=format:"%B %d, %Y"');
-
-            if ($process->successful()) {
-                return trim($process->output());
+            // 2. Fallback to Git (great for local development)
+            try {
+                $process = Process::run('git log -1 --format=%cd --date=format:"%B %d, %Y"');
+                if ($process->successful() && ! empty(trim($process->output()))) {
+                    return trim($process->output());
+                }
+            } catch (\Throwable) {
+                // Git not available
             }
 
-            // 3. Final fallback to config
+            // 3. Final fallback to config date
             return config('portfolio.last_updated', 'February 28, 2026');
         });
     }
