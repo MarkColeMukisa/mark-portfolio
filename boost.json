@@ -1,7 +1,9 @@
 {
     "agents": [
         "codex",
-        "gemini"
+        "gemini",
+        "copilot",
+        "opencode"
     ],
     "guidelines": true,
     "mcp": true,
