@@ -52,4 +52,13 @@ readonly class ExperienceBreakdown
 
         return collect($parts)->join(', ');
     }
+
+    public function yearsOnly(): string
+    {
+        if ($this->years > 0) {
+            return $this->years.' '.($this->years === 1 ? 'year' : 'years');
+        }
+
+        return 'Less than 1 year';
+    }
 }

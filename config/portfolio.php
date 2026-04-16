@@ -18,4 +18,15 @@ return [
 
     'experience_start_date' => env('PORTFOLIO_EXPERIENCE_START_DATE', '2020-06-01'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Fallback Last Updated Date
+    |--------------------------------------------------------------------------
+    |
+    | Used if the dynamic git-based last updated date cannot be retrieved.
+    |
+    */
+
+    'last_updated' => env('PORTFOLIO_LAST_UPDATED', 'February 28, 2026'),
+
 ];

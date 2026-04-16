@@ -13,7 +13,12 @@ new class extends Component
         try {
             $startDate = CarbonImmutable::parse(config('portfolio.experience_start_date', '2020-06-01'));
             $breakdown = $calculator->calculate($startDate);
-            $this->experienceSummary = $breakdown->detailedPeriod().' of Experience';
+
+            $period = auth()->check()
+                ? $breakdown->detailedPeriod()
+                : $breakdown->yearsOnly();
+
+            $this->experienceSummary = $period.' of Experience';
         } catch (Throwable) {
             // Preserve a safe fallback if the configured date cannot be parsed.
         }

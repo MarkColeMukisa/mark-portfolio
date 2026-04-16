@@ -1,10 +1,16 @@
 <?php
 
+use App\Support\DeploymentInfo;
 use Livewire\Component;
 
 new class extends Component
 {
-    //
+    public string $lastUpdated;
+
+    public function mount(): void
+    {
+        $this->lastUpdated = DeploymentInfo::lastUpdated();
+    }
 };
 ?>
 
@@ -53,7 +59,7 @@ new class extends Component
         <p class="mb-4 px-4 text-center font-mono text-sm text-zinc-500 dark:text-zinc-400">
             Built by <a class="font-medium underline-offset-4 hover:underline" href="https://jb.desishub.com" target="_blank" rel="noopener">MarkCole (FullStack Laravel Developer)</a>
         </p>
-        <p class="mb-4 px-4 text-center font-mono text-xs text-zinc-500 dark:text-zinc-400">© 2026 MarkCole FullStack Laravel Developer • Last updated: February 28, 2026</p>
+        <p class="mb-4 px-4 text-center font-mono text-xs text-zinc-500 dark:text-zinc-400">© {{ now()->year }} MarkCole FullStack Laravel Developer • Last updated: {{ $lastUpdated }}</p>
     </div>
 
     <div class="pb-[env(safe-area-inset-bottom,0px)]">

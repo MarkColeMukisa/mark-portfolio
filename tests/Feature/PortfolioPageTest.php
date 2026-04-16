@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Services\ExperienceCalculator;
 use Carbon\CarbonImmutable;
 
@@ -8,6 +9,9 @@ test('home page can be rendered with portfolio and navbar content', function () 
 
     $response
         ->assertOk()
+        ->assertSee('/favicon.ico')
+        ->assertSee('/favicon.svg')
+        ->assertSee('/apple-touch-icon.png')
         ->assertSee('Me')
         ->assertSee('Blogs')
         ->assertSee('mc-logo.png')
@@ -47,12 +51,28 @@ test('home page can be rendered with portfolio and navbar content', function () 
         ->assertSee('min-[390px]:inline', false);
 });
 
-test('traits component shows dynamic experience label from config start date', function () {
+test('traits component shows only years of experience for guests', function () {
     CarbonImmutable::setTestNow('2026-04-03');
 
     config(['portfolio.experience_start_date' => '2020-06-01']);
 
     $response = $this->get(route('home'));
+
+    $response
+        ->assertOk()
+        ->assertSee('5 years of Experience');
+
+    CarbonImmutable::setTestNow();
+});
+
+test('traits component shows detailed experience label for admin', function () {
+    CarbonImmutable::setTestNow('2026-04-03');
+
+    config(['portfolio.experience_start_date' => '2020-06-01']);
+
+    $user = User::factory()->create();
+
+    $response = $this->actingAs($user)->get(route('home'));
 
     $response
         ->assertOk()
