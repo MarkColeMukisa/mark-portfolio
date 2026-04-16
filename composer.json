@@ -54,7 +54,7 @@
             "@version:generate"
         ],
         "version:generate": [
-            "@php -r \"$date = trim((string) @shell_exec('git log -1 --format=%cd --date=format:\\\"%B %d, %Y\\\"')); $date = !empty($date) ? $date : date('F d, Y'); file_put_contents('version.json', json_encode(['last_updated' => $date, 'generated_at' => date('c')], JSON_PRETTY_PRINT)); echo 'Version file generated with date: ' . $date . PHP_EOL;\""
+            "@php scripts/generate-version.php"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

@@ -6,6 +6,7 @@ namespace App\Support;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Process;
+use Throwable;
 
 class DeploymentInfo
 {
@@ -23,10 +24,12 @@ class DeploymentInfo
             // 2. Fallback to Git (great for local development)
             try {
                 $process = Process::run('git log -1 --format=%cd --date=format:"%B %d, %Y"');
-                if ($process->successful() && ! empty(trim($process->output()))) {
-                    return trim($process->output());
+                $output = trim($process->output());
+
+                if ($process->successful() && $output !== '') {
+                    return $output;
                 }
-            } catch (\Throwable) {
+            } catch (Throwable) {
                 // Git not available
             }
 

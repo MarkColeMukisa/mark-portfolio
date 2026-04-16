@@ -57,7 +57,7 @@ new class extends Component
         </div>
 
         <p class="mb-4 px-4 text-center font-mono text-sm text-zinc-500 dark:text-zinc-400">
-            Built by <a class="font-medium underline-offset-4 hover:underline" href="https://jb.desishub.com" target="_blank" rel="noopener">MarkCole (FullStack Laravel Developer)</a>
+            Built by <a class="font-medium underline-offset-4 hover:underline" href="https://www.markcole.dev" target="_blank" rel="noopener">Mark Cole (FullStack Laravel Developer)</a>
         </p>
         <p class="mb-4 px-4 text-center font-mono text-xs text-zinc-500 dark:text-zinc-400">© {{ now()->year }} MarkCole FullStack Laravel Developer • Last updated: {{ $lastUpdated }}</p>
     </div>
