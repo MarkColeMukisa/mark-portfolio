@@ -1,17 +1,18 @@
 <section class="border-b border-zinc-200 dark:border-zinc-700">
     <div class="mx-auto w-full max-w-6xl px-3 sm:px-6">
         <div class="border-x border-zinc-200 dark:border-zinc-700">
-            <div class="grid grid-cols-[7.5rem_minmax(0,1fr)] sm:grid-cols-[13rem_minmax(0,1fr)]">
+            <div class="grid grid-cols-[auto_minmax(0,1fr)]">
                 <div class="border-e border-zinc-200 p-1.5 dark:border-zinc-700 sm:p-2">
-                    <div class="overflow-hidden rounded-full border border-zinc-300 ring-1 ring-zinc-300 ring-offset-2 ring-offset-white dark:border-zinc-600 dark:ring-zinc-500 dark:ring-offset-zinc-900">
+                    <div class="size-28 sm:size-64 overflow-hidden rounded-full border border-zinc-300 ring-1 ring-zinc-300 ring-offset-2 ring-offset-white dark:border-zinc-600 dark:ring-zinc-500 dark:ring-offset-zinc-900">
                         <img
-                            class="size-28 select-none object-cover object-[42%_45%] sm:size-44"
+                            class="w-full h-full select-none object-cover object-[42%_45%]"
                             alt="Mark Cole profile avatar"
                             fetchpriority="high"
-                            src="{{ asset('cole-1side.jpeg') }}">
+                            src="{{ asset('cole.jpg') }}">
                     </div>
                 </div>
 
+                {{-- Attributes  --}}
                 <div
                     x-data="{
                         subtitles: @js($subtitles),

@@ -56,6 +56,12 @@ new class extends Component
             'icon' => 'https://cdn.simpleicons.org/github/111111',
             'custom' => false,
         ],
+        [
+            'name' => 'React',
+            'url' => 'https://react.dev',
+            'icon' => 'https://cdn.simpleicons.org/react/61DAFB',
+            'custom' => false,
+        ],
     ];
 };
 ?>
